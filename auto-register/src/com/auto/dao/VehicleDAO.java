@@ -28,5 +28,6 @@ public interface VehicleDAO {
 	public Person getOwner(String uniqueNumber);
 
 	public Statistics getNumberFromDatabase();
-
+	
+	public boolean checkIfPlateExists(String plate);
 }

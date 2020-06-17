@@ -64,6 +64,12 @@ public class VehicleServiceImpl implements VehicleService {
 		return vehicleDAO.getNumberFromDatabase();
 	}
 	
+	@Override
+	@Transactional
+	public boolean checkIfPlateExists(String plate) {
+		return vehicleDAO.checkIfPlateExists(plate);
+	}
+	
 	
 
 }
