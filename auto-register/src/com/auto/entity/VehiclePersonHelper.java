@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.auto.validation.UniquePlate;
+
 public class VehiclePersonHelper {
 	
 	@NotNull(message="is required, dont use white-spaces!!")
@@ -24,6 +26,7 @@ public class VehiclePersonHelper {
 	@NotNull(message="is required, dont use white-spaces!!")
 	@Size(min=4, message="is required, at least 4 characters are required")
 	@Pattern(regexp = "^(?:[A-Z]{2}|[B])-\\d{2,3}\\-[A-Z]{3}+$", message="invalid format, PH-99-JAV!")
+	@UniquePlate
 	private String plate;
 	
 	@NotNull(message="is required, dont use white-spaces!!")

@@ -44,6 +44,19 @@ public class VehicleDAOImpl implements VehicleDAO {
 
 		return true;
 	}
+	
+	@Override
+	public boolean checkIfPlateExists(String plate) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<Vehicle> theQuery = currentSession.createQuery("from Vehicle v where v.plate=:plateEnteredByClient").setParameter("plateEnteredByClient", plate);
+		List<Vehicle> existingVehicle = theQuery.getResultList();
+		if (existingVehicle.isEmpty()) {
+
+			return true;
+		}
+
+		return false;
+	}
 
 	@Override
 	public void addVehicleToDatabase(@Valid VehiclePersonHelper theVehicleXperson) {
