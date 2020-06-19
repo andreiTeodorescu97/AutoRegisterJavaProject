@@ -63,6 +63,12 @@ public class VehicleServiceImpl implements VehicleService {
 	public Statistics getNumberFromDatabase() {
 		return vehicleDAO.getNumberFromDatabase();
 	}
+
+	@Override
+	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId) {
+		vehicleDAO.addVehicleAndTyreToDatabase(vehicleId,tyreId);
+		
+	}
 	
 	
 

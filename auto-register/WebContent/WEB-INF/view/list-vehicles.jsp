@@ -6,6 +6,12 @@
 
 <head>
 <title>Vehicles List</title>
+<style>
+table, th, td {
+  border: 2px inset coral;
+  border-collapse: collapse;
+}
+</style>
 </head>
 
 <body>
@@ -15,6 +21,7 @@
 		</div>
 	</div>
 	<a href="${pageContext.request.contextPath}">Meniu principal</a>
+	<br><br>
 	<div id="contrainer">
 		<div id="content">
 
@@ -43,6 +50,9 @@
 						<c:param name="vehicleIdToUpdate" value="${tempVariable.id}" />
 					</c:url>
 
+					<c:url var="viewLink" value="/vehicle/showFormForView">
+						<c:param name="vehicleIdToView" value="${tempVariable.id}" />
+					</c:url>
 					<tr>
 						<td>${tempVariable.brand}</td>
 						<td>${tempVariable.model}</td>
@@ -57,7 +67,9 @@
 						<td>${tempVariable.anualTax}</td>
 						<td><a href="${updateLink}">Update</a>
 						 | <a href="${deleteLink}"
-							onclick="if(!(confirm('Stegeti vehiculul cu numarul de inmatriculare ${tempVariable.plate}'))) return false">Delete</a></td>
+							onclick="if(!(confirm('Stegeti vehiculul cu numarul de inmatriculare ${tempVariable.plate}'))) return false">Delete</a>
+							 | <a href="${viewLink}">Detalii</a>
+					   </td>
 					</tr>
 				</c:forEach>
 			</table>

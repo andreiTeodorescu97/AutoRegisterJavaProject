@@ -43,6 +43,8 @@ public class Person {
 	@JoinColumn(name="id_person")
 	private List<Vehicle> vehicles;
 	
+	
+	
 	public List<Appointment> getAppointments() {
 		return appointments;
 	}

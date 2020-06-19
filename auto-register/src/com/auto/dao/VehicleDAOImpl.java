@@ -11,9 +11,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.auto.entity.Person;
 import com.auto.entity.Statistics;
+import com.auto.entity.Tyre;
 import com.auto.entity.Vehicle;
 import com.auto.entity.VehiclePersonHelper;
 
@@ -261,6 +264,21 @@ public class VehicleDAOImpl implements VehicleDAO {
 		theNumbers.setNumberOfVehiclesOlderThan10(totalNumberOldest);
 		
 		return theNumbers;
+	}
+
+	@Override
+	@Transactional(readOnly = true, propagation=Propagation.NOT_SUPPORTED)
+	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		Vehicle theCar = currentSession.get(Vehicle.class, vehicleId);
+		
+		Tyre theTyre = currentSession.get(Tyre.class, tyreId);
+		
+		theCar.addTyre(theTyre);
+		
+		currentSession.saveOrUpdate(theCar);
+		
 	}
 	
 }

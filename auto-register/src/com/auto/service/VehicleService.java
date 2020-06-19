@@ -25,4 +25,6 @@ public interface VehicleService {
 	
 	public Statistics getNumberFromDatabase();
 	
+	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId);
+	
 }

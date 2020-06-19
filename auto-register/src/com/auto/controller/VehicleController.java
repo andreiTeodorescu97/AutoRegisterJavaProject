@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.auto.entity.Tyre;
 import com.auto.entity.Vehicle;
 import com.auto.entity.VehiclePersonHelper;
 import com.auto.service.LogService;
+import com.auto.service.TyreService;
 import com.auto.service.VehicleService;
 
 @Controller
@@ -30,6 +32,9 @@ public class VehicleController {
 	private VehicleService vehicleService;
 	@Autowired
 	private LogService logService;
+	
+	@Autowired
+	private TyreService tyreService;
 
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
@@ -104,5 +109,34 @@ public class VehicleController {
 		theModel.addAttribute("vehicleXperson", theVehicleXperson);
 		return "add-vehicle";
 	}
+	
+	@GetMapping("/showFormForView")
+	public String showViewVehicleForm(@RequestParam("vehicleIdToView") int vehicleId, Model theModel) {
+
+		VehiclePersonHelper theVehicleXperson = vehicleService.getVehicleAndOwnerFromDatabase(vehicleId);
+		theModel.addAttribute("vehicleXperson", theVehicleXperson);
+		
+		List<Tyre> theTyres = tyreService.getTyresFromDatabase();
+
+		theModel.addAttribute("nonExistingTyresForTheJsp", theTyres);
+		
+		return "details-vehicle";
+	}
+	@GetMapping("/addTyreToVehicle")
+	public String processForm(@RequestParam("vehicleIdToAdd") int vehicleId, @RequestParam("tyreIdToAdd") int tyreId) {
+
+		
+			
+			if(vehicleId != 0 && tyreId != 0) {
+				vehicleService.addVehicleAndTyreToDatabase(vehicleId, tyreId);
+				//String logType = "Insert";
+				//String logMessage = "Inserted: vehicleId=" + vehicleId + ", tyreId=" + tyreId;
+				//logService.addLogToDatabase(logType, logMessage);
+			}
+
+			return "details-vehicle";
+		
+	}
+	
 
 }

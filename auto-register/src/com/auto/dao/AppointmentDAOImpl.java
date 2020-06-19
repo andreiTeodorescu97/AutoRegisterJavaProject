@@ -45,6 +45,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		thePerson.addAppointment(theAppointment);
 		currentSession.saveOrUpdate(thePerson);
+		
 	}
 
 }
