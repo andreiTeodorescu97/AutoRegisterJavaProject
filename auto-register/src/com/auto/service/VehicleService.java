@@ -12,6 +12,8 @@ import com.auto.entity.VehiclePersonHelper;
 public interface VehicleService {
 	
 	public boolean checkIfPersonExists(String cnp);
+	
+	public boolean checkIfPlateExists(String plate);
 
 	public void addVehicleToDatabase(@Valid VehiclePersonHelper theVehicleXperson);
 

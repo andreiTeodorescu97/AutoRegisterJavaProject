@@ -280,7 +280,7 @@ public class VehicleDAOImpl implements VehicleDAO {
 	}
 
 	@Override
-	@Transactional(readOnly = true, propagation=Propagation.NOT_SUPPORTED)
+	//@Transactional(readOnly = true, propagation=Propagation.NOT_SUPPORTED)
 	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId) {
 		Session currentSession = sessionFactory.getCurrentSession();
 		

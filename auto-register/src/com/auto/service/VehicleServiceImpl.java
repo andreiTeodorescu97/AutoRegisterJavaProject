@@ -65,6 +65,7 @@ public class VehicleServiceImpl implements VehicleService {
 	}
 
 	@Override
+	@Transactional
 	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId) {
 		vehicleDAO.addVehicleAndTyreToDatabase(vehicleId,tyreId);
 		
