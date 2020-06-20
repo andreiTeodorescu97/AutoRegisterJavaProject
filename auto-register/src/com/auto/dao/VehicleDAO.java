@@ -4,12 +4,16 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.auto.entity.Person;
 import com.auto.entity.Statistics;
 import com.auto.entity.Vehicle;
 import com.auto.entity.VehiclePersonHelper;
 
-public interface VehicleDAO {
+
+public interface VehicleDAO extends JpaRepository<Vehicle, Long>{
 	
 	public boolean checkIfPersonExists(String cnp);
 
@@ -30,5 +34,7 @@ public interface VehicleDAO {
 	public Statistics getNumberFromDatabase();
 	
 	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId);
+
+	boolean checkIfPlateExists(String plate);
 
 }

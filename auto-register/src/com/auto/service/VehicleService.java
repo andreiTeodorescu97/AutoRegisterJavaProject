@@ -9,6 +9,8 @@ import com.auto.entity.Statistics;
 import com.auto.entity.Vehicle;
 import com.auto.entity.VehiclePersonHelper;
 
+import org.springframework.data.domain.Page;
+
 public interface VehicleService {
 	
 	public boolean checkIfPersonExists(String cnp);
@@ -26,5 +28,9 @@ public interface VehicleService {
 	public Statistics getNumberFromDatabase();
 	
 	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId);
+
+	boolean checkIfPlateExists(String plate);
+	
+	Page<Vehicle> findPaginated(int pageNo, int pageSize);
 	
 }

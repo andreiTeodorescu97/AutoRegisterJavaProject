@@ -5,6 +5,10 @@
 <html>
 
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <title>Vehicles List</title>
 	<style>
 		.error{color:red}
@@ -12,18 +16,19 @@
 </head>
 
 <body>
-	<div id="wrapper">
+<div class="container-fluid">
+	<div align="center" id="wrapper">
 		<div id="header">
 			<h2>Inregistreaza un autovehicul</h2>
 		</div>
 	</div>
-	
+	<a class="btn btn-default pull-right" href="${pageContext.request.contextPath}">Meniu principal</a>
 	<div id="contrainer">
 		<div id="content">
 			
 	<form:form action="addVehicle" modelAttribute="vehicleXperson">
 	
-		Tip(*):<form:select path="type">
+		Tip(*):<form:select  path="type">
 		 				<form:option value=""/>
 		 				<form:option value="Autoturism"/>
 		 				<form:option value="Autobuz"/>
@@ -35,7 +40,7 @@
 		<form:errors path="type" cssClass="error"/>
 		<br><br>
 	
-		 Marca(*): <form:input path="brand"/>
+		 Marca(*): <form:input  path="brand"/>
 		<form:errors path="brand" cssClass="error"/>
 		<br><br>
 		
@@ -98,8 +103,9 @@
 		<input type="submit" value="Submit"/>
 		
 	</form:form>
-			<a href="${pageContext.request.contextPath}">Meniu principal</a>
+			
 		</div>
+	</div>
 	</div>
 </body>
 

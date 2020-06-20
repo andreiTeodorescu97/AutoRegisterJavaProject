@@ -3,6 +3,7 @@ package com.auto.dao;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -10,6 +11,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +28,7 @@ import com.auto.entity.Vehicle;
 import com.auto.entity.VehiclePersonHelper;
 
 @Repository
-public class VehicleDAOImpl implements VehicleDAO {
+public class VehicleDAOImpl implements VehicleDAO  {
 
 	@Autowired
 	private SessionFactory sessionFactory;
