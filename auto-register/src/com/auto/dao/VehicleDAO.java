@@ -37,6 +37,6 @@ public interface VehicleDAO extends JpaRepository<Vehicle, Long>{
 	
 	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId);
 
-	boolean checkIfPlateExists(String plate);
+	//boolean checkIfPlateExists(String plate);
 
 }

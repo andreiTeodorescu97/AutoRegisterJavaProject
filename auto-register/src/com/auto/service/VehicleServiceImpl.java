@@ -36,7 +36,7 @@ public class VehicleServiceImpl implements VehicleService {
 	@Transactional
 	public boolean checkIfPersonExists(String cnp) {
 		
-		this.vehicleRepo.findAll(arg0)
+		//this.vehicleRepo.findAll(arg0)
 		return vehicleDAO.checkIfPersonExists(cnp);
 	}
 

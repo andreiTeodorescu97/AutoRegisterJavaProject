@@ -31,7 +31,7 @@ public interface VehicleService {
 	
 	public void addVehicleAndTyreToDatabase(int vehicleId, int tyreId);
 
-	boolean checkIfPlateExists(String plate);
+	//boolean checkIfPlateExists(String plate);
 	
 	Page<Vehicle> findPaginated(int pageNo, int pageSize);
 	
