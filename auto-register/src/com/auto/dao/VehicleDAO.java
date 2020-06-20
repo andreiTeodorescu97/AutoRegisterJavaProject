@@ -16,6 +16,8 @@ import com.auto.entity.VehiclePersonHelper;
 public interface VehicleDAO extends JpaRepository<Vehicle, Long>{
 	
 	public boolean checkIfPersonExists(String cnp);
+	
+	public boolean checkIfPlateExists(String plate);
 
 	public void addVehicleToDatabase(@Valid VehiclePersonHelper theVehicleXperson);
 	
