@@ -28,7 +28,7 @@ public class VehicleServiceImpl implements VehicleService {
 	
 	//@Autowired
 	//@Qualifier("VehicleDAO")
-	private VehicleRepository vehicleRepo;
+	//private VehicleRepository vehicleRepo;
 
 	
 	
@@ -90,12 +90,12 @@ public class VehicleServiceImpl implements VehicleService {
 		return vehicleDAO.checkIfPlateExists(plate);
 	}
 
-	@Override
+	/*@Override
 	public Page<Vehicle> findPaginated(int pageNo, int pageSize) {
 		Pageable pageable = PageRequest.of(pageNo -1,  pageSize);
 		return this.vehicleDAO.findAll(pageable);
 		
-	}
+	}*/
 	
 	
 

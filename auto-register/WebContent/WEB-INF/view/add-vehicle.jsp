@@ -12,6 +12,8 @@
 <title>Vehicles List</title>
 	<style>
 		.error{color:red}
+		
+		.padding-top15{padding-top:15px;}
 	</style>
 </head>
 
@@ -27,61 +29,91 @@
 		<div id="content">
 			
 	<form:form action="addVehicle" modelAttribute="vehicleXperson">
+	<br>
+	<br>
+	<hr>
 	
-		Tip(*):<form:select  path="type">
-		 				<form:option value=""/>
-		 				<form:option value="Autoturism"/>
-		 				<form:option value="Autobuz"/>
-		 				<form:option value="Autocar"/>
-		 				<form:option value="Motocicleta"/>
-		 				<form:option value="Microbuz"/>
-		 				<form:option value="Tractor"/>
-		 		 </form:select>
-		<form:errors path="type" cssClass="error"/>
-		<br><br>
-	
-		 Marca(*): <form:input  path="brand"/>
-		<form:errors path="brand" cssClass="error"/>
-		<br><br>
-		
-		 Model(*): <form:input path="model"/>
-		<form:errors path="model" cssClass="error"/>
-		<br><br>
-		
-		 Numar inmatriculare(*): <form:input path="plate"/>
-		<form:errors path="plate" cssClass="error"/>
-		<br><br>
-		
-		 VIN(*): <form:input path="identificationNumber"/>
-		<form:errors path="identificationNumber" cssClass="error"/>
-		<br><br>
-		
-		 Capacitate cilindrica(*): <form:input path="cilindricCapacity"/>
-		<form:errors path="cilindricCapacity" cssClass="error"/>
-		<br><br>
-		
-		 Culoare(*): <form:input path="color"/>
-		<form:errors path="color" cssClass="error"/>
-		<br><br>
-		
-		 Combustibil(*): <form:select path="fuel">
+
+	<div class="form-group">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<div class="col-sm-4">
+				<label for="exampleInputEmail1">Tip(*)</label>
+				<form:select class="form-control" path="type">
+				 				<form:option value=""/>
+				 				<form:option value="Autoturism"/>
+				 				<form:option value="Autobuz"/>
+				 				<form:option value="Autocar"/>
+				 				<form:option value="Motocicleta"/>
+				 				<form:option value="Microbuz"/>
+				 				<form:option value="Tractor"/>
+				 		 </form:select>
+				<form:errors path="type" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4">
+				<label for="exampleInputEmail1">Marca(*)</label>
+				<form:input  class="form-control" path="brand"/>
+				<form:errors path="brand" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4">
+				<label for="exampleInputEmail1">Model(*)</label>
+				<form:input class="form-control" path="model"/>
+				<form:errors path="model" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Numar inmatriculare(*)</label>
+				<form:input class="form-control" path="plate"/>
+				<form:errors path="plate" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Serie sasiu(*)</label>
+				<form:input class="form-control" path="identificationNumber"/>
+				<form:errors path="identificationNumber" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Capacitate cilindrica(*)</label>
+				<form:input class="form-control"  path="cilindricCapacity"/>
+				<form:errors path="cilindricCapacity" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Culoare(*)</label>
+				<form:input class="form-control" path="color"/>
+				<form:errors path="color" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Combustibil(*)</label>
+				<form:select class="form-control" path="fuel">
 			 				<form:option value=""/>
 			 				<form:option value="Benzina"/>
 			 				<form:option value="Motorina"/>
 			 				<form:option value="Electric"/>
 		 		 		</form:select>
-		<form:errors path="fuel" cssClass="error"/>
-		<br><br>
-		
-		 Cai Putere(*): <form:input path="power"/>
-		<form:errors path="power" cssClass="error"/>
-		<br><br>
-		
-		 Data Productie(*): <form:input type="date" path="productionDate"/>
-		<form:errors path="productionDate" cssClass="error"/>
-		<br><br>
-		
-		 Norma Poluare(*): <form:select path="polutionNumber">
+				<form:errors path="fuel" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Cai Putere(*)</label>
+				 <form:input class="form-control" path="power"/>
+				 <form:errors path="power" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Data Productie(*)</label>
+				<form:input class="form-control" type="date" path="productionDate"/>
+				<form:errors path="productionDate" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">Norma Poluare(*)</label>
+				<form:select class="form-control" path="polutionNumber">
 			 				<form:option value=""/>
 			 				<form:option value="EURO 1"/>
 			 				<form:option value="EURO 2"/>
@@ -91,16 +123,26 @@
 			 				<form:option value="EURO 6"/>
 			 				<form:option value="ELECTRIC"/>
 		 		 		</form:select>
-		<form:errors path="polutionNumber" cssClass="error"/>
-		<br><br>
+				<form:errors path="polutionNumber" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-4 padding-top15">
+				<label for="exampleInputEmail1">CNP Proprietar(*)</label>
+				<form:input class="form-control" path="uniqueNumberForPerson"/>
+				<form:errors path="uniqueNumberForPerson" cssClass="error"/>
+			</div>
+			
+			<div class="col-sm-12 padding-top15">
+				<input type="submit" class="btn btn-success btn-xl" style="float:right" value="Inregistreaza"/>
+			</div>
+		</div>
+		<div class="col-md-3"></div>
 		
-		 CNP Proprietar(*) : <form:input path="uniqueNumberForPerson"/>
-		<form:errors path="uniqueNumberForPerson" cssClass="error"/>
+	</div>
 		<br><br>
+	</div>
 		
 		<form:hidden path="vehicleId"/>
-		
-		<input type="submit" value="Submit"/>
 		
 	</form:form>
 			

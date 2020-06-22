@@ -24,6 +24,7 @@ import com.auto.entity.Vehicle;
 import com.auto.entity.VehiclePersonHelper;
 import com.auto.service.LogService;
 import com.auto.service.TyreService;
+import com.auto.service.VehicleJspService;
 import com.auto.service.VehicleService;
 
 @Controller
@@ -36,7 +37,9 @@ public class VehicleController {
 	private LogService logService;
 	@Autowired
 	private TyreService tyreService;
-
+	//@Autowired
+	//private VehicleJspService vehicleJspService;
+	
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		// StringTrimerEditor removes whitespace leading and trailing
@@ -47,15 +50,16 @@ public class VehicleController {
 	@GetMapping("/list")
 	public String listVehicles(Model theModel) {
 
-		//List<Vehicle> theVehicles = vehicleService.getVehicles();
+		List<Vehicle> theVehicles = vehicleService.getVehicles();
 
-		//theModel.addAttribute("listVehicles", theVehicles);
+		theModel.addAttribute("listVehicles", theVehicles);
 		
-		//return "list-vehicles";
+		return "list-vehicles";
 		
-		return findPaginated(1, theModel);
+		//return findPaginated(1, theModel);
 	}
 
+	
 	@GetMapping("/showFormForAddingVehicle")
 	public String showAddVehicleForm(Model theModel) {
 		theModel.addAttribute("vehicleXperson", new VehiclePersonHelper());
@@ -141,7 +145,7 @@ public class VehicleController {
 		
 	} 
 	
-	@GetMapping("/page/{pageNo}")
+	/*@GetMapping("/page/{pageNo}")
 	public String findPaginated(@PathVariable (value = "pageNo") int pageNo, Model model) {
 		int pageSize = 2;
 		
@@ -154,5 +158,5 @@ public class VehicleController {
 		model.addAttribute("listVehicles", listVehicles);
 		
 		return "list-vehicles";
-	}
+	}*/
 }

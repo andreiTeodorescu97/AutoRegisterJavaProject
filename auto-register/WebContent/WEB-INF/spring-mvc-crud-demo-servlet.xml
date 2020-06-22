@@ -38,8 +38,8 @@
           destroy-method="close">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/proiect_java?useSSL=false&amp;serverTimezone=UTC" />
-        <property name="user" value="andreiteodorescu" />
-        <property name="password" value="1234%Asd" /> 
+        <property name="user" value="FMI2020" />
+        <property name="password" value="fmi2020" /> 
 
         <!-- these are connection pool properties for C3P0 -->
         <property name="minPoolSize" value="5" />

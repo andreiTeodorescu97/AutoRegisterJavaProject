@@ -33,6 +33,6 @@ public interface VehicleService {
 
 	//boolean checkIfPlateExists(String plate);
 	
-	Page<Vehicle> findPaginated(int pageNo, int pageSize);
+	//Page<Vehicle> findPaginated(int pageNo, int pageSize);
 	
 }

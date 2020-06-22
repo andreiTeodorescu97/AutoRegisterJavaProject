@@ -28,7 +28,7 @@ import com.auto.entity.Vehicle;
 import com.auto.entity.VehiclePersonHelper;
 
 @Repository
-public class VehicleDAOImpl implements VehicleDAO  {
+public class VehicleDAOImpl implements VehicleDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
