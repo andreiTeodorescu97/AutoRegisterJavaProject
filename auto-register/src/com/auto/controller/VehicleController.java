@@ -141,7 +141,7 @@ public class VehicleController {
 				//logService.addLogToDatabase(logType, logMessage);
 			}
 
-			return "details-vehicle";
+			return "vehicle-tyre-confirmation";
 		
 	} 
 	
